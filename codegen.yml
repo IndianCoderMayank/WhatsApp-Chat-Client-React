@@ -1,4 +1,4 @@
-schema: ../WhatsApp-Clone-Server/schema.ts
+schema: ../WhatsApp-Chat-Server/schema.ts
 documents:
   - ./src/**/*.tsx
   - ./src/**/*.ts
