@@ -1,6 +1,6 @@
 # WhatsApp Chat - Client
 
-![WhatsApp-Clone](./README/WhatsApp-Clone.gif)
+![WhatsApp-Clone](README/WhatsApp-Clone.gif)
 
 ### Run instructions
 
