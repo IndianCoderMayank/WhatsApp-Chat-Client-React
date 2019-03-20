@@ -21,10 +21,12 @@
 
 Note that the types are generated from the server! So if you clone the server project in a different path be sure to update the `codegen.yml` file.
 
-Start the server, see run [instructions](https://github.com/vbosstech/WhatsApp-Chat-Server).
+> Start the `WhatsApp-Chat-Server`, see run [instructions](https://github.com/vbosstech/WhatsApp-Chat-Server).
 
-Run start
+- Run start
 
+   ```
     $ yarn start
+   ```
 
-Note that the server should run on port `4000`. If you decide to change that, be sure to edit the `.env` file
+Note that the server should run on port `4000`. If you decide to change that be sure to edit the `.env` file
