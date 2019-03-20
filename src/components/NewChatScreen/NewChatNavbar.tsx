@@ -4,6 +4,8 @@ import { History } from 'history'
 import * as React from 'react'
 import styled from 'styled-components'
 
+const name = 'NewChatNavbar'
+
 const Style = styled.div`
   padding: 0;
   display: flex;
@@ -29,7 +31,7 @@ export default ({ history }: NewChatNavbarProps) => {
   }
 
   return (
-    <Style className="NewChatNavbar">
+    <Style className={name}>
       <Button className="NewChatNavbar-back-button" onClick={navToChats}>
         <ArrowBackIcon />
       </Button>

@@ -59,7 +59,7 @@ export default ({ history }: ChatsNavbarProps) => {
 
   return (
     <Style className="ChatsNavbar">
-      <span className="ChatsNavbar-title">WhatsApp Clone</span>
+      <span className="ChatsNavbar-title">SmartChat</span>
       <div className="ChatsNavbar-rest">
         <Button className="ChatsNavbar-options-btn" onClick={setPopped.bind(null, true)}>
           <MoreIcon />

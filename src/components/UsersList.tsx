@@ -9,6 +9,8 @@ import styled from 'styled-components'
 import * as fragments from '../graphql/fragments'
 import { UsersListQuery, User } from '../graphql/types'
 
+const name = 'UsersList'
+
 const Style = styled.div`
   .UsersList-users-list {
     padding: 0;
@@ -69,7 +71,7 @@ export default (props: UsersListProps) => {
   const [selectedUsers, setSelectedUsers] = useState([])
   const {
     data: { users },
-  } = useQuery<UsersListQuery.Query>(query, { suspend: true })
+  } = useQuery<UsersListQuery.Query>(query)
 
   const onListItemClick = user => {
     if (!selectable) {
@@ -83,29 +85,30 @@ export default (props: UsersListProps) => {
       selectedUsers.push(user)
     }
 
-    setSelectedUsers(selectedUsers)
+    setSelectedUsers([...selectedUsers])
     onSelectionChange(selectedUsers)
   }
 
   return (
-    <Style className="UsersList" selectable={selectable}>
+    <Style className={name} selectable={selectable}>
       <List className="UsersList-users-list">
-        {users.map(user => (
-          <ListItem
-            className="UsersList-user-item"
-            key={user.id}
-            button
-            onClick={onListItemClick.bind(null, user)}
-          >
-            <img
-              className="UsersList-profile-pic"
-              src={user.picture || '/assets/default-profile-pic.jpg'}
-            />
-            <div className="UsersList-name">{user.name}</div>
+        {users &&
+          users.map(user => (
+            <ListItem
+              className="UsersList-user-item"
+              key={user.id}
+              button
+              onClick={onListItemClick.bind(null, user)}
+            >
+              <img
+                className="UsersList-profile-pic"
+                src={user.picture || '/assets/default-profile-pic.jpg'}
+              />
+              <div className="UsersList-name">{user.name}</div>
 
-            {selectedUsers.includes(user) && <CheckCircle className="UsersList-checkmark" />}
-          </ListItem>
-        ))}
+              {selectedUsers.includes(user) && <CheckCircle className="UsersList-checkmark" />}
+            </ListItem>
+          ))}
       </List>
     </Style>
   )

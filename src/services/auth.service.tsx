@@ -1,3 +1,4 @@
+import gql from 'graphql-tag'
 import * as React from 'react'
 import { useContext } from 'react'
 import { useQuery } from 'react-apollo-hooks'
@@ -18,7 +19,7 @@ export const withAuth = (Component: React.ComponentType) => {
     if (!getAuthHeader()) return <Redirect to="/sign-in" />
 
     // Validating against server
-    const myResult = useQuery<Me.Query>(queries.me, { suspend: true })
+    const myResult = useQuery<Me.Query>(queries.me)
 
     // Override TypeScript definition issue with the current version
     if (myResult.error) return <Redirect to="/sign-in" />

@@ -108,7 +108,7 @@ export default ({ history, location }: RouteComponentProps) => (
   <Style className="AuthScreen Screen">
     <div className="AuthScreen-intro">
       <img src="assets/whatsapp-icon.png" className="AuthScreen-icon" />
-      <h2 className="AuthScreen-title">WhatsApp Clone</h2>
+      <h2 className="AuthScreen-title">SmartChat</h2>
     </div>
     <AnimatedSwitch>
       <Route exact path="/sign-in" component={SignInForm} />

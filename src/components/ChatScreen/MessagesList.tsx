@@ -109,7 +109,6 @@ export default ({ chatId }: MessagesListProps) => {
     },
   } = useQuery<MessagesListQuery.Query, MessagesListQuery.Variables>(query, {
     variables: { chatId },
-    suspend: true,
   })
   const selfRef = useRef(null)
 

@@ -21,6 +21,7 @@ export default styled(AnimatedSwitch).attrs(() => ({
   overflow: hidden;
   width: 100%;
   height: 100%;
+
   > div {
     position: absolute;
     overflow: hidden;
